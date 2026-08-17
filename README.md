@@ -1,6 +1,11 @@
-# PA0 Task 1 - Inner Workings of ResNet-152
+# PA0 Vision Experiments - ResNet-152 and ViT
 
-Reproducible PyTorch experiments for Task 1 of EE-5102/CS-6304 Assignment 0. The project uses CIFAR-10 to study a frozen ImageNet-pretrained classifier, residual-connection ablation, feature hierarchies, and transfer-learning strategies. It records machine-readable metrics and metadata so the later NeurIPS-format analysis can be based on actual runs rather than copied console output.
+Reproducible PyTorch experiments for Tasks 1 and 2 of EE-5102/CS-6304 Assignment 0. The project records machine-readable metrics and metadata so the later NeurIPS-format analysis can be based on actual runs rather than copied console output.
+
+- **Task 1 - ResNet-152:** the implementation and model guide continue below.
+- **Task 2 - Vision Transformer:** see the complete [ViT implementation guide](docs/TASK2_VIT.md), covering ImageNet classification, attention overlays, head specialization, patch masking, and CLS-versus-mean linear probes.
+
+## Task 1 - Inner Workings of ResNet-152
 
 > Scope: required Task 1 items 1-4. The optional t-SNE/UMAP comparison, confusion analysis, and ResNet-18 comparison are intentionally not included yet.
 

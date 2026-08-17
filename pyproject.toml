@@ -3,9 +3,9 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "pa0-resnet152"
+name = "pa0-vision-experiments"
 version = "0.1.0"
-description = "PA0 Task 1 experiments on the inner workings of ResNet-152"
+description = "PA0 experiments on ResNet-152 and Vision Transformers"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -16,10 +16,12 @@ dependencies = [
   "matplotlib>=3.8,<4",
   "scikit-learn>=1.4,<2",
   "PyYAML>=6,<7",
+  "transformers>=4.44,<6",
 ]
 
 [project.scripts]
 resnet152-pa0 = "resnet152_pa0.cli:main"
+vit-pa0 = "vit_pa0.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -27,4 +29,3 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
-

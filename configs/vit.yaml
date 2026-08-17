@@ -1,0 +1,14 @@
+seed: 42
+model_id: WinKawaks/vit-tiny-patch16-224
+data_dir: data
+output_dir: outputs/vit
+device: auto
+num_workers: 2
+batch_size: 64
+probe_epochs: 20
+probe_learning_rate: 0.001
+probe_weight_decay: 0.0001
+train_subset: null
+val_subset: null
+mask_fractions: [0.0, 0.1, 0.25, 0.5, 0.75]
+random_mask_trials: 3
