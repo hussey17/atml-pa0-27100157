@@ -1,0 +1,22 @@
+# Local assignment handout (not redistributed in the public repository)
+PA 0.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+*.egg-info/
+
+# Datasets, checkpoints, and generated experiment artifacts
+data/
+outputs/
+tmp/
+*.pt
+*.pth
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/

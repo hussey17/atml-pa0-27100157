@@ -1,0 +1,21 @@
+seed: 42
+data_dir: data
+output_dir: outputs
+device: auto
+num_workers: 2
+batch_size: 32
+image_size: 224
+epochs: 5
+learning_rate: 0.001
+weight_decay: 0.0001
+train_subset: null
+val_subset: null
+feature_samples: 2000
+tsne_perplexity: 30.0
+# These blocks preserve tensor shape, so their identity paths can be removed
+# without introducing a replacement projection.
+ablate_blocks:
+  - layer2.1
+  - layer3.1
+  - layer4.1
+

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pa0-resnet152"
+version = "0.1.0"
+description = "PA0 Task 1 experiments on the inner workings of ResNet-152"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "torch>=2.3,<3",
+  "torchvision>=0.18,<1",
+  "numpy>=1.26,<3",
+  "matplotlib>=3.8,<4",
+  "scikit-learn>=1.4,<2",
+  "PyYAML>=6,<7",
+]
+
+[project.scripts]
+resnet152-pa0 = "resnet152_pa0.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
