@@ -1,9 +1,10 @@
-# PA0 Vision Experiments - ResNet-152 and ViT
+# PA0 Experiments - ResNet-152, ViT, and VAE
 
-Reproducible PyTorch experiments for Tasks 1 and 2 of EE-5102/CS-6304 Assignment 0. The project records machine-readable metrics and metadata so the later NeurIPS-format analysis can be based on actual runs rather than copied console output.
+Reproducible PyTorch experiments for Tasks 1, 2, and 4 of EE-5102/CS-6304 Assignment 0. Task 3 is intentionally deferred. The project records machine-readable metrics and metadata so the later NeurIPS-format analysis can be based on actual runs rather than copied console output.
 
 - **Task 1 - ResNet-152:** the implementation and model guide continue below.
 - **Task 2 - Vision Transformer:** see the complete [ViT implementation guide](docs/TASK2_VIT.md), covering ImageNet classification, attention overlays, head specialization, patch masking, and CLS-versus-mean linear probes.
+- **Task 4 - Variational Autoencoder:** see the complete [MNIST VAE implementation guide](docs/TASK4_VAE.md), covering ELBO training, latent visualization, reconstruction, generation, dimensionality sweeps, and the Doersch comparison.
 
 ## Task 1 - Inner Workings of ResNet-152
 

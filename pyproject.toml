@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pa0-vision-experiments"
-version = "0.1.0"
-description = "PA0 experiments on ResNet-152 and Vision Transformers"
+version = "0.3.0"
+description = "PA0 experiments on ResNet-152, Vision Transformers, and VAEs"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -22,6 +22,7 @@ dependencies = [
 [project.scripts]
 resnet152-pa0 = "resnet152_pa0.cli:main"
 vit-pa0 = "vit_pa0.cli:main"
+vae-pa0 = "vae_pa0.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

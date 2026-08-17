@@ -1,0 +1,19 @@
+seed: 42
+data_dir: data
+output_dir: outputs/vae
+device: auto
+num_workers: 2
+batch_size: 128
+epochs: 15
+learning_rate: 0.001
+weight_decay: 0.0
+input_dim: 784
+hidden_dim: 400
+latent_dim: 2
+beta: 1.0
+train_subset: null
+val_subset: null
+analysis_samples: 10
+latent_plot_samples: 5000
+latent_sweep_dims: [2, 10, 30]
+latent_sweep_epochs: 5
