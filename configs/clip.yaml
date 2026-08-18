@@ -1,0 +1,14 @@
+seed: 42
+model_name: ViT-B/32
+data_dir: data
+output_dir: outputs/clip
+download_root: null
+device: auto
+num_workers: 2
+batch_size: 64
+test_subset: null
+gap_samples: 100
+alignment_samples: 100
+gap_prompt_strategy: photo
+alignment_prompt_strategy: photo
+tsne_perplexity: 25.0

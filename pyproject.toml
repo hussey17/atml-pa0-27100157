@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pa0-vision-experiments"
-version = "0.3.0"
-description = "PA0 experiments on ResNet-152, Vision Transformers, and VAEs"
+version = "0.4.0"
+description = "PA0 experiments on ResNet-152, Vision Transformers, CLIP, and VAEs"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -15,14 +15,17 @@ dependencies = [
   "numpy>=1.26,<3",
   "matplotlib>=3.8,<4",
   "scikit-learn>=1.4,<2",
+  "scipy>=1.10,<2",
   "PyYAML>=6,<7",
   "transformers>=4.44,<6",
+  "clip @ git+https://github.com/openai/CLIP.git",
 ]
 
 [project.scripts]
 resnet152-pa0 = "resnet152_pa0.cli:main"
 vit-pa0 = "vit_pa0.cli:main"
 vae-pa0 = "vae_pa0.cli:main"
+clip-pa0 = "clip_pa0.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

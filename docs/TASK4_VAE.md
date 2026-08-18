@@ -1,6 +1,6 @@
 # Task 4 - Variational Autoencoders on MNIST
 
-This guide maps every required VAE task to executable PyTorch code and explains the probabilistic model behind it. The default configuration trains a 2D-latent MLP VAE for 15 epochs, which directly supports the assignment's latent-space plot. Task 3 is intentionally absent and can be added later without changing this package.
+This guide maps every required VAE task to executable PyTorch code and explains the probabilistic model behind it. The default configuration trains a 2D-latent MLP VAE for 15 epochs, which directly supports the assignment's latent-space plot.
 
 ## Requirement-to-code map
 

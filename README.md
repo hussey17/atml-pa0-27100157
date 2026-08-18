@@ -1,10 +1,24 @@
-# PA0 Experiments - ResNet-152, ViT, and VAE
+# PA0 Experiments - ResNet-152, ViT, CLIP, and VAE
 
-Reproducible PyTorch experiments for Tasks 1, 2, and 4 of EE-5102/CS-6304 Assignment 0. Task 3 is intentionally deferred. The project records machine-readable metrics and metadata so the later NeurIPS-format analysis can be based on actual runs rather than copied console output.
+Reproducible PyTorch experiments for Tasks 1-4 of EE-5102/CS-6304 Assignment 0. The project records machine-readable metrics and metadata so the later NeurIPS-format analysis can be based on actual runs rather than copied console output.
 
 - **Task 1 - ResNet-152:** the implementation and model guide continue below.
 - **Task 2 - Vision Transformer:** see the complete [ViT implementation guide](docs/TASK2_VIT.md), covering ImageNet classification, attention overlays, head specialization, patch masking, and CLS-versus-mean linear probes.
+- **Task 3 - CLIP:** see the complete [CLIP implementation guide](docs/TASK3_CLIP.md), covering three zero-shot prompt strategies on STL-10, raw/normalized modality-gap analysis, and held-out Orthogonal Procrustes alignment.
 - **Task 4 - Variational Autoencoder:** see the complete [MNIST VAE implementation guide](docs/TASK4_VAE.md), covering ELBO training, latent visualization, reconstruction, generation, dimensionality sweeps, and the Doersch comparison.
+
+## Task 3 quick start
+
+Task 3 uses OpenAI's official `ViT-B/32` CLIP package and Torchvision STL-10. The default configuration evaluates all 8,000 test images, selects 100 balanced examples for the modality plot, and learns the Procrustes rotation from a separate balanced subset of the training split.
+
+```bash
+python -m pip install -e .
+clip-pa0 zero-shot --config configs/clip.yaml
+clip-pa0 gap --config configs/clip.yaml
+clip-pa0 align --config configs/clip.yaml
+```
+
+`clip-pa0 all` runs the complete task and reuses the full-test image embeddings between the zero-shot and alignment stages. See [docs/TASK3_CLIP.md](docs/TASK3_CLIP.md) for the model mechanics, requirement-to-code map, output schema, interpretation guidance, and a reduced pipeline-check command.
 
 ## Task 1 - Inner Workings of ResNet-152
 
@@ -160,13 +174,25 @@ python -m pytest -q
 
 ```text
 configs/default.yaml              experiment defaults
+configs/vit.yaml                  ViT experiment defaults
+configs/clip.yaml                 CLIP/STL-10 experiment defaults
+configs/vae.yaml                  VAE experiment defaults
 src/resnet152_pa0/data.py         CIFAR-10 transforms and loaders
 src/resnet152_pa0/modeling.py     model, freezing, residual ablation
 src/resnet152_pa0/training.py     train/evaluate loops and checkpoints
 src/resnet152_pa0/features.py     hooks and t-SNE visualization
 src/resnet152_pa0/reporting.py    cross-run tables and learning curves
 src/resnet152_pa0/cli.py          experiment orchestration
+src/vit_pa0/                      Task 2 ViT experiments
+src/clip_pa0/                     Task 3 CLIP experiments
+src/vae_pa0/                      Task 4 VAE experiments
+docs/TASK2_VIT.md                 Task 2 model/code guide
+docs/TASK3_CLIP.md                Task 3 model/code guide
+docs/TASK4_VAE.md                 Task 4 model/code guide
 tests/test_modeling.py            architecture and ablation tests
+tests/test_vit_core.py            ViT unit tests
+tests/test_clip_core.py           CLIP/alignment unit tests
+tests/test_vae.py                 VAE unit tests
 ```
 
 ## References
